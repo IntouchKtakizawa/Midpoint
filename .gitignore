@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Env files (secrets) — see .env.example in each project
+.env
+.env.*.local
+
+# Build output
+dist/
+web-build/
+.expo/
+
+# Native (Expo generated)
+/app/ios
+/app/android
+expo-env.d.ts
+.metro-health-check*
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# OS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo

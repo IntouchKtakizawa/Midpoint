@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Colors */
+  --color-bg: #f4f5fb;
+  --color-surface: #ffffff;
+  --color-text: #14161f;
+  --color-text-muted: #6b7280;
+  --color-text-faint: #9ca3af;
+  --color-border: #e6e8f0;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-soft: #eef0fe;
+  --color-danger: #e0483f;
+  --color-danger-soft: #fdecec;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(20, 22, 31, 0.06);
+  --shadow-md: 0 6px 20px rgba(20, 22, 31, 0.08);
+  --shadow-lg: 0 16px 40px rgba(20, 22, 31, 0.18);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Custom scrollbars for the scrollable lists (country list, search dropdown) */
+.country-list::-webkit-scrollbar,
+.search-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+.country-list::-webkit-scrollbar-thumb,
+.search-dropdown::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+.country-list::-webkit-scrollbar-track,
+.search-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
