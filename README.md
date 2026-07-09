@@ -2,6 +2,8 @@
 
 Finds a real, convenient place for 2+ people to meet (train stations, cafes, parks, etc.), ranked by fairness of actual travel time — not just geographic distance.
 
+Public link : https://midpoint-az3j7c1pd-airvex.vercel.app/
+
 ## Structure
 
 - `server/` — Node/Express API. Finds real venues and travel times using free OpenStreetMap-based services (Overpass, OSRM, Nominatim) by default; can optionally use Google Maps Platform.
