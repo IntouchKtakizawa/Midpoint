@@ -2,6 +2,16 @@
 
 Finds a real, convenient place for 2+ people to meet (train stations, cafes, parks, etc.), ranked by fairness of actual travel time — not just geographic distance.
 
+## Try it live
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/IntouchKtakizawa/Midpoint)
+
+One click deploys both the website and its backend to [Render](https://render.com)'s free tier — no credit card required. Sign in with your GitHub account, click "Apply", and Render reads [`render.yaml`](render.yaml) to set everything up automatically. You'll get a public link like `https://midpoint-web.onrender.com` you can share with anyone.
+
+A couple of things to know about the free tier:
+- Both services spin down after 15 minutes of no traffic, so the first visit after a quiet period takes ~30–50 seconds to wake up. Totally normal, not a bug.
+- If the name `midpoint-server` is already taken by someone else's Render deploy, Render will pick a variant name for your backend (e.g. `midpoint-server-ab12`). If the site loads but searches don't work, open the `midpoint-web` service in your Render dashboard → Environment → update `VITE_API_URL` to your actual backend URL → Manual Deploy.
+
 ## Structure
 
 - `server/` — Node/Express API. Finds real venues and travel times using free OpenStreetMap-based services (Overpass, OSRM, Nominatim) by default; can optionally use Google Maps Platform.
