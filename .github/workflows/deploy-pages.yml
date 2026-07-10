@@ -1,5 +1,6 @@
 name: Deploy website to GitHub Pages
 
+# Re-run trigger: GitHub Pages is now enabled with Source: GitHub Actions.
 on:
   push:
     branches: [main]
