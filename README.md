@@ -4,13 +4,20 @@ Finds a real, convenient place for 2+ people to meet (train stations, cafes, par
 
 ## Try it live
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/IntouchKtakizawa/Midpoint)
+The website is a static site (free on **GitHub Pages**) that talks to a small API (needs to actually run, so it's on **Render**'s free tier). Two platforms because Pages can't run server code — both are free, no credit card.
 
-One click deploys both the website and its backend to [Render](https://render.com)'s free tier — no credit card required. Sign in with your GitHub account, click "Apply", and Render reads [`render.yaml`](render.yaml) to set everything up automatically. You'll get a public link like `https://midpoint-web.onrender.com` you can share with anyone.
+**Public site:** `https://intouchktakizawa.github.io/Midpoint/` (live once both steps below are done)
+
+### One-time setup
+
+1. **Backend** — click to deploy: [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/IntouchKtakizawa/Midpoint). Sign in with GitHub, click "Apply". Render reads [`render.yaml`](render.yaml) and gives you a URL like `https://midpoint-server.onrender.com`.
+2. **Frontend** — in this repo on GitHub: Settings → Pages → under "Build and deployment", set Source to **GitHub Actions**. That's it — [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) builds and publishes the site automatically on every push to `main`.
+
+If your backend's actual URL differs from `https://midpoint-server.onrender.com` (Render adds a random suffix if that name's taken), set it once in this repo: Settings → Secrets and variables → Actions → Variables tab → add `VITE_API_URL` with your real backend URL → re-run the "Deploy website to GitHub Pages" workflow under the Actions tab.
 
 A couple of things to know about the free tier:
-- Both services spin down after 15 minutes of no traffic, so the first visit after a quiet period takes ~30–50 seconds to wake up. Totally normal, not a bug.
-- If the name `midpoint-server` is already taken by someone else's Render deploy, Render will pick a variant name for your backend (e.g. `midpoint-server-ab12`). If the site loads but searches don't work, open the `midpoint-web` service in your Render dashboard → Environment → update `VITE_API_URL` to your actual backend URL → Manual Deploy.
+- The backend spins down after 15 minutes of no traffic, so the first search after a quiet period takes ~30–50 seconds to respond. Totally normal, not a bug.
+- The website itself (GitHub Pages) has no such delay — it's a static file, always instantly available.
 
 ## Structure
 

@@ -11,18 +11,3 @@ services:
         value: osm
       - key: NODE_VERSION
         value: 20.11.0
-
-  - type: web
-    name: midpoint-web
-    runtime: static
-    plan: free
-    rootDir: web
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://midpoint-server.onrender.com
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
